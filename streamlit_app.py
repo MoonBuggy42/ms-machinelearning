@@ -16,3 +16,6 @@ with st.expander("Data"):
   st.write("**y**")
   y=df.species
   y
+with st.expander("Data Visualization"):
+  fig1 = px.scatter(df, x="bill_length_mm", y="body_mass_g", color="species", hover_data=["island"])
+  st.plotly_chart(fig1)
