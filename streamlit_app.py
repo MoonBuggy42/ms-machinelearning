@@ -113,9 +113,7 @@ st.dataframe(df_prediction_proba,
                  max_value=1
                )}, hide_index=True)
 
-st.write(f"**Adelie: {percent_cal(df_prediction_proba.loc[0, 'Adelie'])}**")
-st.write(f"**Chinstrap: {percent_cal(df_prediction_proba.loc[0, 'Chinstrap'])}**")
-st.write(f"**Gentoo: {percent_cal(df_prediction_proba.loc[0, 'Gentoo'])}**")
+
 
 penguins_species = np.array(['Adelie', 'Chinstrap', 'Gentoo'])
 st.success(str(penguins_species[prediction][0]))
