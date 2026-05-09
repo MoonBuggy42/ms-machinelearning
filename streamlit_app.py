@@ -88,6 +88,31 @@ def percent_cal(x):
   return f"{percent}%"
 
 st.subheader('Predicted Species')
+
+st.dataframe(df_prediction_proba, 
+             column_config={
+               'Adelie': st.column_config.ProgressColumn(
+                 'Adelie',
+                 format="%f",
+                 width='medium',
+                 min_value=0,
+                 max_value=1
+               ),
+               'Chinstrap': st.column_config.ProgressColumn(
+                 'Chinstrap',
+                 format="%f",
+                 width='medium',
+                 min_value=0,
+                 max_value=1
+               ),
+               'Gentoo': st.column_config.ProgressColumn(
+                 'Gentoo',
+                 format="%f",
+                 width='medium',
+                 min_value=0,
+                 max_value=1
+               )}, hide_index=True)
+
 st.write(f"**Adelie: {percent_cal(df_prediction_proba.loc[0, 'Adelie'])}**")
 st.write(f"**Chinstrap: {percent_cal(df_prediction_proba.loc[0, 'Chinstrap'])}**")
 st.write(f"**Gentoo: {percent_cal(df_prediction_proba.loc[0, 'Gentoo'])}**")
