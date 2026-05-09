@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+from sklearn.ensemble import RandomForestClassifier
 st.title('🤖 Machine Learning App')
 
 st.info("This app Builds a machine learning model!")
